@@ -1,9 +1,9 @@
 # Pandas Tricks
 
 
-## Avoid Int to Float when df.T.to\_dict\(\).values\(\)
+## Avoid `Int to Float` when `df.T.to_dict().values()`
 
-Instead of use list\(df.T.to\_dict\(\).values\(\)\), use **\[{c:getattr\(r, c\) for c in df} for r in df.itertuples\(\)\]**
+Instead of use `list(df.T.to_dict().values())`, use `[{c:getattr(r, c) for c in df} for r in df.itertuples()]`
 
 > Ref: [https://stackoverflow.com/questions/37897527/get-python-pandas-to-dict-with-orient-records-but-without-float-cast](https://stackoverflow.com/questions/37897527/get-python-pandas-to-dict-with-orient-records-but-without-float-cast)
 >
