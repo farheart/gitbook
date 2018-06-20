@@ -1,6 +1,6 @@
 # Python Tricks
 
-## logging -- configuration and usage
+## Logging -- Configuration and Usage
 
 * Create `logconf.json` under the root folder of project
 

@@ -2,7 +2,13 @@
 description: WY's developmet notes
 ---
 
-# Readme
+# Introduction
 
-WY's developmet notes
+A notebook to record all tricks / lessons / experiences that I encoutered / learned / accumulated during development
+
+A reference guide to myself, hopefully it is useful to others
+
+
+WangYu  
+2018-06-20
 

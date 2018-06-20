@@ -1,6 +1,7 @@
 # Pandas Tricks
 
-## Avoid convert Int to Float when do df.T.to\_dict\(\).values\(\)
+
+## Avoid Int to Float when df.T.to\_dict\(\).values\(\)
 
 Instead of use list\(df.T.to\_dict\(\).values\(\)\), use **\[{c:getattr\(r, c\) for c in df} for r in df.itertuples\(\)\]**
 
@@ -15,13 +16,17 @@ Instead of use list\(df.T.to\_dict\(\).values\(\)\), use **\[{c:getattr\(r, c\) 
 > # [{'a': 3, 'b': 42.0}, {'a': 2, 'b': 3.1400000000000001}]
 > ```
 
+
 ## Set display format
 
-`pd.set_option('display.width',200)    
+```python
+pd.set_option('display.width',200)    
 pd.set_option('display.max_rows',20)    
-pd.set_option('display.max_columns', 15)`
+pd.set_option('display.max_columns', 15)
+```
 
-## Iterate DataFrame
+
+## Iterate DataFrame by rows
 
 ```python
 df = readCSV(inCSV)
@@ -30,12 +35,14 @@ for i,r in df.iterrows():
         url = createURL(r)
 ```
 
+
 ## Read from CSV
 
 ```python
 def function(fn):
     return pd.read_csv(fn, index_col=false)
 ```
+
 
 ## Access URL and retrieve JSON
 
