@@ -8,6 +8,9 @@ A notebook to record all tricks / lessons / experiences that I encoutered / lear
 
 A reference guide to myself, hopefully it is useful to others
 
+## URL
+<https://wangyu.gitbook.io/wangyu-s-notes/>
+
 
 WangYu  
 2018-06-20

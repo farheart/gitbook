@@ -6,7 +6,7 @@
 Instead of use `list(df.T.to_dict().values())`, use **`[{c:getattr(r, c) for c in df} for r in df.itertuples()]`**
 
 > Ref: [https://stackoverflow.com/questions/37897527/get-python-pandas-to-dict-with-orient-records-but-without-float-cast](https://stackoverflow.com/questions/37897527/get-python-pandas-to-dict-with-orient-records-but-without-float-cast)
->
+
 ```python
 import pandas as pd
 
