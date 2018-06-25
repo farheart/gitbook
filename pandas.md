@@ -220,3 +220,34 @@ In [21]: timeit df.to_dict('records')
 ```python
 xingDict = df.set_index('stree')[['lat', 'lon']].to_dict(orient='index')
 ```
+
+
+## Convert from string to numeric
+
+```python
+laneDF[['QUAD_ID','LANE_ID','STORE_NBR']] = laneDF[['QUAD_ID','LANE_ID','STORE_NBR']].apply(pd.to_numeric)
+```
+
+## Convert `list of list` to DataFrame
+
+```python
+jsonStr = """
+{
+    "scheduleType": 1,
+    "schedule": {
+        "dcNumber": 123,
+        "user": "abc",
+        "nbrOfAssociates": 123,
+        "laneInfo": [
+            ["QUADRANT_ID", "LANE_ID", "STORE_NBR", "LANE_OPEN"],
+            ["1", "1", "1", "Y"],
+            ["2", "1", "2", "N"]
+        ]
+    }
+}
+"""
+upData = json.loads(jsonStr)
+s = upData['schedule']
+headers = s['laneInfo'].pop(0) # remove top row and use it as column title
+laneDF = pd.DataFrame(s['laneInfo'], columns=headers)
+```
