@@ -3,7 +3,7 @@
 * [About](README.md)
 * [Docker]()
     * [MSSQL in Docker](docker/mssql_in_docker.md)
-    * [Nginx in Docker](docker/Nginx_in_docker.md)
+    * [Nginx in Docker](docker/nginx_in_docker.md)
 * [Python]()
     * [Pandas](python/pandas.md)
     * [Logging](python/logging.md)
