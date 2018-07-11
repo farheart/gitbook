@@ -251,3 +251,35 @@ s = upData['schedule']
 headers = s['laneInfo'].pop(0) # remove top row and use it as column title
 laneDF = pd.DataFrame(s['laneInfo'], columns=headers)
 ```
+
+## iloc() and loc()
+
+> Ref: <https://stackoverflow.com/questions/31593201/pandas-iloc-vs-ix-vs-loc-explanation-how-are-they-different>
+
+> Note: in pandas version 0.20.0 and above, `ix` is deprecated and the use of `loc` and `iloc` is encouraged instead.
+
+> - loc gets rows (or columns) with particular labels from the index.
+> - iloc gets rows (or columns) at particular positions in the index (so it only takes integers).
+> - ix usually tries to behave like loc but falls back to behaving like iloc if a label is not present in the index.
+
+```python
+>>> s = pd.Series(np.nan, index=[49, 48, 1, 2, 3])
+>>> s
+49   NaN
+48   NaN
+1    NaN
+2    NaN
+3    NaN
+
+>>> s.iloc[:2] # slice the first 2 rows
+49   NaN
+48   NaN
+
+>>> s.loc[:2] # slice up to and including label 2
+49   NaN
+48   NaN
+1    NaN
+2    NaN
+
+>>> s.iloc[i, 'lat']  # row by number and column by name
+```
