@@ -17,6 +17,16 @@ print(result)
 ```
 
 
+## Read Excel
+```python
+xl = pd.ExcelFile(fn)
+            
+# read Sheets as DataFrames
+NaN_List = ['-1.#IND', '1.#QNAN', '1.#IND', '-1.#QNAN', '#N/A', '#NA', 'NULL', 'NaN', '-NaN', 'nan', '-nan']  # Nashville term is NA
+df_Node = xl.parse("Node", converters={'milepost': str}, keep_default_na=False, na_values=NaN_List)
+df_Segment = xl.parse("Segment", converters={'startNode': str, 'endNode': str}, keep_default_na=False, na_values=NaN_List)
+```
+
 ## Set display format
 ```python
 import pandas as pd
@@ -36,9 +46,9 @@ for i,r in df.iterrows():
 ```
 
 
-## Add new calculated column
+## New calculated column
 ```python
-df.loc[:'diff'] = df.apply(lambda r: r['c1'] - r['c2'], axis=1)
+df.loc[:, 'diff'] = df.apply(lambda r: r['c1'] - r['c2'], axis=1)
 ```
 
 
@@ -215,10 +225,81 @@ In [21]: timeit df.to_dict('records')
 10000 loops, best of 3: 53 µs per loop
 ```
 
+## DataFrame to dict of dict
+```python
+
+>>> df
+dc_id    store_id    osrm_miles
+12       6000        123.4
+12       6001        234.5
+23       5801        167.5
+
+grp = df.groupby(['dc_id']) 
+return {
+    int(dc_id): grp.get_group(dc_id)[['store_id', 'miles']].set_index('store_id').T.to_dict('list')
+    for dc_id in grp.groups.keys()
+}  # {dc_id: {store_id: [miles]}}
+```
 
 ## DataFrame to dict
 ```python
 xingDict = df.set_index('stree')[['lat', 'lon']].to_dict(orient='index')
+```
+
+> Ref: https://stackoverflow.com/questions/26716616/convert-a-pandas-dataframe-to-a-dictionary
+
+```python
+
+>>> df
+    ID   A   B   C
+0   p    1   3   2
+1   q    4   3   2
+2   r    4   0   9  
+
+>>> df.set_index('ID').T.to_dict('list')
+{'p': [1, 3, 2], 'q': [4, 3, 2], 'r': [4, 0, 9]}
+
+
+>>> df = pd.DataFrame({'a': ['red', 'yellow', 'blue'], 'b': [0.5, 0.25, 0.125]})
+>>> df
+        a      b
+0     red  0.500
+1  yellow  0.250
+2    blue  0.125
+
+>>> df.to_dict('dict')
+{'a': {0: 'red', 1: 'yellow', 2: 'blue'}, 
+ 'b': {0: 0.5, 1: 0.25, 2: 0.125}}
+
+>>> df.to_dict('list')
+{'a': ['red', 'yellow', 'blue'], 
+ 'b': [0.5, 0.25, 0.125]}
+
+>>> df.to_dict('series')
+{'a': 0       red
+      1    yellow
+      2      blue
+      Name: a, dtype: object, 
+
+ 'b': 0    0.500
+      1    0.250
+      2    0.125
+      Name: b, dtype: float64}
+
+>>> df.to_dict('split')
+{'columns': ['a', 'b'],
+ 'data': [['red', 0.5], ['yellow', 0.25], ['blue', 0.125]],
+ 'index': [0, 1, 2]}
+
+>>> df.to_dict('records')
+[{'a': 'red', 'b': 0.5}, 
+ {'a': 'yellow', 'b': 0.25}, 
+ {'a': 'blue', 'b': 0.125}]
+
+>>> df.to_dict('index')
+{0: {'a': 'red', 'b': 0.5},
+ 1: {'a': 'yellow', 'b': 0.25},
+ 2: {'a': 'blue', 'b': 0.125}}
 ```
 
 
@@ -282,4 +363,10 @@ laneDF = pd.DataFrame(s['laneInfo'], columns=headers)
 2    NaN
 
 >>> s.iloc[i, 'lat']  # row by number and column by name
+```
+
+## `NaN` filter
+```python
+# Take rows whose row['X'] != NaN
+df = df[~pd.isna(df['X'])]
 ```

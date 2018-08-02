@@ -7,6 +7,19 @@ import time
 time.sleep(0.005)  # sleep 5 milli-seconds
 ```
 
+## pickle
+```python
+import pickle
+
+with open('tmp.pickle', 'wb') as f:
+    pickle.dump(df, f)
+
+with open('tmp.pickle', 'rb') as f:
+    df = pickle.load(f)
+```
+
+
+
 
 ## Pause running by `time.sleep()`
 ```python
