@@ -14,3 +14,9 @@ curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "New item", "ye
 
 curl -i -X PUT -H 'Content-Type: application/json' -d '{"name": "Updated item", "year": "2010"}' http://rest-api.io/items/5069b47aa892630aae059584
 ```
+
+
+## Download file by `curl`
+```
+$ curl -O http://xxx/18.04/yyy.iso -x http://xxx.com:8080
+```
