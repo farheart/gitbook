@@ -18,30 +18,37 @@ if [ -f $HOME/.bashrc ]; then
 fi
 ```
 
-
 ## Template of .bashrc / .bash_profile
 ```bash
 # Proxy setting should be in .bash_profile
-export http_proxy=http://xxx:8080
-export https_proxy=http://xxx:8080
-export no_proxy=localhost, 127.0.0.1, *.my.lan
+
+# Proxy Setting
+export http_proxy="http://xxx.com:8080"
+export https_proxy=$http_proxy
+export ftp_proxy=$http_proxy  
+export rsync_proxy=$http_proxy
+export no_proxy="localhost,127.0.0.1,::1,localaddress,.localdomain.com"
+
 
 # Colorful prompt
 export TERM="xterm-color"
 export PS1='\n[\[\e[0;96m\]\u\[\e[0m\]@\[\e[0;94m\]\h\[\e[0m\]]:\[\e[0;92m\]\w \n\[\e[0;93m\]\$ \[\e[0m\]'
 
-
 # Alias
 alias ls='ls -al --color=auto'
+
+# GIT
+alias gitlog='git --no-pager log --oneline --abbrev-commit --branches=* --graph --decorate --color | head -n 20'
+
+#--------------------------------------------------------
+# Below are for reference only
+#--------------------------------------------------------
 
 # MacOS only : redefine ls to show details
 alias ls='ls -alG'
 
 # Added by Anaconda3 installer
 export PATH="/home/wy/soft/anaconda3/bin:$PATH"
-
-# GIT
-alias gitlog='git --no-pager log --oneline --abbrev-commit --branches=* --graph --decorate --color | head -n 20'
 
 # Maven path
 export MAVEN_HOME='/Users/y0w02p1/wy/programs/apache-maven-3.5.3'
@@ -52,6 +59,5 @@ export PATH=${PATH}:~/wy/codes/bash
 
 # Run conda.sh script
 . /usr/local/anaconda3/etc/profile.d/conda.sh
-
 
 ```
