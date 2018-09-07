@@ -10,6 +10,9 @@ $ cat .bashrc
 # Added by WY @ 2018-08-30
 export http_proxy=http://127.0.0.1:63128
 export https_proxy=$http_proxy
+export HTTP_PROXY=$http_proxy
+export HTTPS_PROXY=$http_proxy
+export NO_PROXY="localhost,127.0.0.1,::1,localaddress,.localdomain.com,.xxx-xxxx.com,.xxx.com"
 
 ```
 
