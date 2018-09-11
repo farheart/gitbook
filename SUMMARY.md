@@ -1,6 +1,8 @@
 # Table of contents
 
 * [About](README.md)
+* [CPLEX]()
+    * [Configurate Eclipse C++ IDE for CPLEX](cplex/config_cplex_in_eclipse_cpp.md)
 * [Docker]()
     * [MSSQL in Docker](docker/mssql_in_docker.md)
     * [Nginx in Docker](docker/nginx_in_docker.md)
