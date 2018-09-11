@@ -69,3 +69,7 @@ to validate:
 > g++ -O0 -m64 -O -fPIC -fno-strict-aliasing -fexceptions -DNDEBUG -DIL_STD -I../../../include -I../../../../concert/include  -L../../../lib/x86-64_linux/static_pic -L../../../../concert/lib/x86-64_linux/static_pic -o ilolpex1 ilolpex1.o -lconcert -lilocplex -lcplex -lm -lpthread
 >```
 > This tells you everything you need to know to compile and link your program. You'll just need to figure out where to enter this information in Eclipse.
+
+Note: on my machine
+
+![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-22-28-34.png)
