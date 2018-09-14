@@ -12,6 +12,6 @@
 
 > Ref: <https://www.leandro-coelho.com/how-to-configure-ibm-cplex-with-apple-xcode/>
 >  
-> Note: the following config is not correct
-> ![](/cplex/img/config_xcode_for_cplex_2018-09-10-22-21-54.png)
-> You need to use **libc++(LLVM C++ ...)**
+Note: the following config is not correct to me (from the Ref)
+![](/cplex/img/config_xcode_for_cplex_2018-09-10-22-21-54.png)
+I need to use **libc++(LLVM C++ ...)**
