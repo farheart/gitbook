@@ -28,24 +28,60 @@ Right click on the project and select **properties**
 
 ### Configuration for compiler
 
+* Includes :: Include paths (-l)
+
+```
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/cplex/include  
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/concert/include
+```
+
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-35-03.png)
+
+* Preprocessor :: Defined symbols (-D)
+
+```
+IL_STD
+```
 
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-36-22.png)
 
+* Dialect :: Other dialect flags
+
+```
+-stdlib=libc++
+```
+
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-37-35.png)
 
-Use the following chart to validate the compile command is correct
+* Use the following chart to validate the compile command is correct
 
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-39-16.png)
 
 
+
 ### Configuration for Linker
+
+* Libraries (-l)
+
+```
+concert
+cplex
+ilocplex
+```
+
+* Library search path (-L)
+
+```
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/cplex/lib/x86-64_osx/static_pic   
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/concert/lib/x86-64_osx/static_pic
+```
 
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-42-01.png)
 
 to validate:
 
 ![](/cplex/img/config_cplex_in_eclipse_cpp_2018-09-10-21-43-26.png)
+
 
 ## Run Configuration
 
