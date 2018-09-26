@@ -8,8 +8,10 @@
 * [C++]()
     * [Pre-processor Output](cpp/preprocessor_output.md)
     * [SWIG]()
+        * [SWIG - MISC](cpp/swig/swig_misc.md)
         * [Call C++ function by SWIG](cpp/swig/call_cpp_by_swig.md)
         * [Send `dict` to C++ function](cpp/swig/send_dict_to_cpp.md)
+    * [C++ MISC](cpp/cpp_misc.md)
 
 * [CPLEX]()
     * [Configurate Eclipse C++ IDE to use CPLEX](cplex/config_cplex_in_eclipse_cpp.md)
