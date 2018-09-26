@@ -53,8 +53,20 @@ Output
 #define __INT16_MAX__ 32767
 #define __INT16_TYPE__ short
 ...
+#define __INT32_MAX__ 2147483647
+#define __INT32_TYPE__ int
+...
 #define __INT64_MAX__ 9223372036854775807LL
 #define __INT64_TYPE__ long long int
+...
+#define __INT8_MAX__ 127
+#define __INT8_TYPE__ signed char
+...
+#define __INTMAX_MAX__ 9223372036854775807L
+#define __INTMAX_TYPE__ long int
+...
+#define __INTPTR_MAX__ 9223372036854775807L
+#define __INTPTR_TYPE__ long int
 ...
 #define __SIZEOF_DOUBLE__ 8
 #define __SIZEOF_FLOAT__ 4
