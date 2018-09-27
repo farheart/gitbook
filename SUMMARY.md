@@ -11,6 +11,7 @@
         * [SWIG - MISC](cpp/swig/swig_misc.md)
         * [Call C++ function by SWIG](cpp/swig/call_cpp_by_swig.md)
         * [Send `dict` to C++ function](cpp/swig/send_dict_to_cpp.md)
+    * [Setup GDB on Macos](cpp/gdb.md)
     * [C++ MISC](cpp/cpp_misc.md)
 
 * [CPLEX]()

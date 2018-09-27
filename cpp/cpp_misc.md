@@ -1,5 +1,19 @@
 # C++ Tips
 
+## gcc五分钟系列
+
+> Ref: <https://lexdene.gitbooks.io/gcc-five-minutes/content/>
+
+* 声明和定义的本质区别是什么?
+**声明没有为符号分配存储空间、定义会为符号分配存储空间。**
+
+* 第十一节：查看汇编代码
+
+    ```bash
+    g++  -s  main.cpp
+    ```
+
+
 ## Caution to define `inline` functionss in header files (`.h`)
 
 `C++` does not allow for duplicated definition, that is why we should not define functions in header files (`.h`) -- since a header file could be included (`#include`) by multiple `.cpp` files, which will cause duplicated definition for the same funtion.
