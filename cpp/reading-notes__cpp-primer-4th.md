@@ -245,3 +245,173 @@ Use `typedef` to simplify pointer to **multi-dimensional** `array`
 int a[3][4];
 typedef int IntArray[4];
 IntArray *p = a;  // p is initialized to pointing to the first element of a, which is a int[4] array
+```
+
+## Chapter-5 : Expression (Pdf. 141 / 769)
+
+### Pdf. 142
+
+* 操作数 operand
+* 操作符 operator
+    * unary (&, *)
+    * binary (+, -, *)
+    * ternary 
+
+### Pdf. 152
+
+The value of the assign expression is the value of its left operand, and the type of its result is the type of its left operand
+
+### Pdf. 154
+
+`++i` 
+* return changed value, which is `i` itself
+* a lvalue
+* less work (+1 and return `i`)
+
+i++
+
+* return unchanged value, which is the original value of `i`
+* a rvalue
+* more work (save original, in order to return)
+
+It is recommended to use `++i`, only use `i++` if really needed !!
+
+### Pdf. 156
+
+string s;
+string *p = &s;
+// equivalent 
+(*p).size();
+p->size();
+
+### Pdf. 158
+sizeof(expr) : sizeof can be applied to expression, expression will not be calculated
+
+int a[10];
+// sizeof(a)/sizeof(a[0]) == number of elements in a
+int num = sizeof(a)/sizeof(*a)
+
+### Pdf. 161, 162 
+
+(p.147) Table 5-4 of priority of all operators
+
+### Pdf. 164, 165, 166
+
+About `new` expression
+
+```c
+int i(10);  // define int var i and initialize its value to 10
+int *p = new int(10);  // p points to a int object whose value is initialized to 10
+// int *p = new int[10];  // p is pointing to a int array object, whose size is 10
+
+int *p = new int;  // p points to an uninitialized int object
+int *p = new int(); // p points to an int object whose value is initialized to 0 (by default)
+
+// Create const object dynamically
+const int *p = new const int(10);  // must be initialized at creation. No more modification allowed
+```
+
+### Pdf. 170
+
+In most cases, array will be converted to a pointer pointing to its first element
+
+```c
+int a[10];
+int *p = a;
+```
+
+Except when
+* & - address of
+* sizeof
+* initialize another array using this array
+
+### Pdf. 172
+
+Cast - `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`
+
+```c
+double d = 9.0;
+void *p = &d;
+double *dp = static_cast<double*>(p); // convert back to double * type
+```
+
+### Pdf. 175
+
+Old style type cast:
+
+```c
+int i; double d;
+i += int(d);  // static_cast: convert double to int
+
+const_char* cp;
+string_copy((char *) cp);  // const_cast: cast away const
+
+int *pi;
+char *pc = (char *) ip;  // reinterpret_cast : treat int* as char*
+```
+
+## Chapter-6 : Statement (Pdf. 179 / 769)
+
+### Pdf.202
+
+Each standard Exception class defines a `what()` function, which returns C-style string
+
+```c
+try {
+    ...
+} catch (runtime_error err) {
+    cout << err.what() << "\n"
+         << "Try again?" << endl;
+}
+```
+
+### Pdf.203
+
+[p. 189] Table 6-1. Standard Exception Class defined in <stdexcept>
+
+![](/cpp/img/reading-notes__cpp-primer-4th_2018-09-28-09-13-33.png)
+
+### Pdf. 204
+
+**Use pre-processor to debug**
+
+Example
+
+```c
+int main() {
+    #ifndef NDEBUG
+    cout << "Starting main() ..." << endl;
+    #endif
+    // ....
+}
+```
+
+* By default, `NDEBUG` not defined, so the output will be executed, which is convenient for debugging
+* When to publish, run the following to delete those statement
+
+```bash
+$ gcc -DNDEBUG main.cpp
+```
+equivalent to 
+```c
+#define NDEBUG   // at the beginning of main,cpp
+```
+
+Other useful constant
+
+* `__FILE__` : file name
+* `__LINE__` : current line number
+* `__TIME__` : compiling time
+* `__DATE__` : compiling date
+
+Example:
+
+```c
+if (capacity < threshold) {
+    cerr << "Error: " << __FILE__
+         << " : line " << __LINE__
+         << " Compiled on " << __DATE__
+         << " at " << __TIME__
+         << " : capacity is too small !!" << endl;
+}
+```

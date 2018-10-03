@@ -13,6 +13,8 @@
         * [Send `dict` to C++ function](cpp/swig/send_dict_to_cpp.md)
     * [Setup GDB on Macos](cpp/gdb.md)
     * [C++ MISC](cpp/cpp_misc.md)
+    * [Books](cpp/book.md)
+
 
 * [CPLEX]()
     * [Configurate Eclipse C++ IDE to use CPLEX](cplex/config_cplex_in_eclipse_cpp.md)
