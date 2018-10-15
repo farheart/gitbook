@@ -132,6 +132,18 @@ g = grp.get_group('Q123')
 sizeDict = grp.size().to_dict()
 ```
 
+
+## Iterate group and sort by columns
+
+```python
+for tid in df_tm6_grp.groups.keys():
+    g = df_tm6_grp.get_group(tid)
+    g = g.sort_values(by=['ON_STATION_TS'], ascending=[True])
+
+df.sort_values(by=['trainID', 'stationSeq'], ascending=[True, True], inplace=True)
+```
+
+
 ## Groupby aggregate
 ```python
 tmp = df.groupby(['start_MP', 'end_MP']).agg({

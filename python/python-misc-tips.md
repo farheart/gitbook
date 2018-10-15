@@ -1,12 +1,14 @@
 # Python Tricks
 
 ## Format number with leading `0`
+
 ```python
 >>> print('data/osrmDist_{0:07d}_{1:07d}.csv'.format(0, 999))
 data/osrmDist_0000000_0000999.csv
 ```
 
 ## pickle
+
 ```python
 import pickle
 
@@ -17,14 +19,15 @@ with open('tmp.pickle', 'rb') as f:
     df = pickle.load(f)
 ```
 
-
 ## Pause running by `time.sleep()`
+
 ```python
 import time
 time.sleep(0.005)  # sleep 5 milli-seconds
 ```
 
 ## Access URL and retrieve JSON
+
 ```python
 # Python3.6
 import urllib.request
@@ -38,8 +41,8 @@ def retrieveJSON(url):
     return result
 ```
 
-
 ## Access URL by Proxy
+
 ```python
 proxy_support = urllib.request.ProxyHandler({
     'http': 'http://aaaaaaaa.com:8080' 
@@ -51,8 +54,8 @@ with urllib.request.urlopen(url) as req:
     print(req.read().decode())
 ```
 
-
 ## Compare `nested loop` vs. `itertools.product`
+
 ```python
 def f1():
     I = ["store-{}".format(i) for i in range(10000)]
