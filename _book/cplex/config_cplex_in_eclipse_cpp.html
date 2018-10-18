@@ -1,0 +1,877 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Configurate Eclipse C++ IDE to use CPLEX · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="config_xcode_for_cplex.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                <a href="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                    
+                    Reading Notes -- 15 Types of Regression You Should Know
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    C++
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cpp/preprocessor_output.html">
+            
+                <a href="../cpp/preprocessor_output.html">
+            
+                    
+                    Pre-processor Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    SWIG
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../cpp/swig/swig_misc.html">
+            
+                <a href="../cpp/swig/swig_misc.html">
+            
+                    
+                    SWIG - MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../cpp/swig/call_cpp_by_swig.html">
+            
+                <a href="../cpp/swig/call_cpp_by_swig.html">
+            
+                    
+                    Call C++ function by SWIG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../cpp/swig/send_dict_to_cpp.html">
+            
+                <a href="../cpp/swig/send_dict_to_cpp.html">
+            
+                    
+                    Send dict to C++ function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cpp/gdb.html">
+            
+                <a href="../cpp/gdb.html">
+            
+                    
+                    Setup GDB on Macos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cpp/cpp_misc.html">
+            
+                <a href="../cpp/cpp_misc.html">
+            
+                    
+                    C++ MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cpp/book.html">
+            
+                <a href="../cpp/book.html">
+            
+                    
+                    Books
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    CPLEX
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.1.1" data-path="config_cplex_in_eclipse_cpp.html">
+            
+                <a href="config_cplex_in_eclipse_cpp.html">
+            
+                    
+                    Configurate Eclipse C++ IDE to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="config_xcode_for_cplex.html">
+            
+                <a href="config_xcode_for_cplex.html">
+            
+                    
+                    Config XCode to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../docker/mssql_in_docker.html">
+            
+                <a href="../docker/mssql_in_docker.html">
+            
+                    
+                    MSSQL in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../docker/nginx_in_docker.html">
+            
+                <a href="../docker/nginx_in_docker.html">
+            
+                    
+                    Nginx in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../docker/reading__Docker架设Nginx服务器.html">
+            
+                <a href="../docker/reading__Docker架设Nginx服务器.html">
+            
+                    
+                    Docker架设Nginx服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    GIT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../git/add_existing_codes_to_GIT.html">
+            
+                <a href="../git/add_existing_codes_to_GIT.html">
+            
+                    
+                    Add Existing Codes to GIT Repo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../git/use-BFG-delete-large-files-from-history.html">
+            
+                <a href="../git/use-BFG-delete-large-files-from-history.html">
+            
+                    
+                    Use BFG to delete large files from history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../git/git_proxy.html">
+            
+                <a href="../git/git_proxy.html">
+            
+                    
+                    Proxy Setting in GIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                <a href="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                    
+                    Jersey_jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../linux/backup_setting_installed.html">
+            
+                <a href="../linux/backup_setting_installed.html">
+            
+                    
+                    Backup settings and list of installed packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../linux/bash_configuration.html">
+            
+                <a href="../linux/bash_configuration.html">
+            
+                    
+                    .bash_profile & .bashrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../linux/things_to_do_after_install.html">
+            
+                <a href="../linux/things_to_do_after_install.html">
+            
+                    
+                    Things TODO after installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../linux/ubuntu_misc.html">
+            
+                <a href="../linux/ubuntu_misc.html">
+            
+                    
+                    Ubuntu Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../maven.html">
+            
+                <a href="../maven.html">
+            
+                    
+                    Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../proxy.html">
+            
+                <a href="../proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../python/multi-value_function.html">
+            
+                <a href="../python/multi-value_function.html">
+            
+                    
+                    About arg and *kwarg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../python/django.html">
+            
+                <a href="../python/django.html">
+            
+                    
+                    Django Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../python/logging.html">
+            
+                <a href="../python/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../python/pandas.html">
+            
+                <a href="../python/pandas.html">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../python/python-misc-tips.html">
+            
+                <a href="../python/python-misc-tips.html">
+            
+                    
+                    Misc Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../web.html">
+            
+                <a href="../web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../for_son.html">
+            
+                <a href="../for_son.html">
+            
+                    
+                    科普
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Configurate Eclipse C++ IDE to use CPLEX</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="configurate-eclipse-c-ide-to-compile-and-link-cplex-program">Configurate Eclipse C++ IDE to compile and link CPLEX program</h1>
+<p>This note shows how to configurate <code>CPLEX</code> in <strong>Eclipse C++ IDE</strong> so that developers can compile and link <code>.cpp</code> which contains <code>CPLEX</code> model.</p>
+<h2 id="eclipse-installation-info">Eclipse Installation Info</h2>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-20-37.png" alt=""></p>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-21-45.png" alt=""></p>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-23-01.png" alt=""></p>
+<h2 id="prepare-a-test-file">Prepare a test file</h2>
+<p>Copy a <strong>MIP</strong> example from 
+<code>.../Applications/IBM/ILOG/CPLEX_Studio1271/cplex/examples/src/cpp/</code>
+into the project. </p>
+<p>However, as we can see below, <strong>Eclipse</strong> complains due to lack of configuration of <strong>include</strong> files (<code>.h</code> files) and <strong>libraries</strong></p>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-26-27.png" alt=""></p>
+<h2 id="configuration-of-cplex">Configuration of CPLEX</h2>
+<p>Right click on the project and select <strong>properties</strong></p>
+<h3 id="configuration-for-compiler">Configuration for compiler</h3>
+<ul>
+<li>Includes :: Include paths (-l)</li>
+</ul>
+<pre><code>/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/cplex/include  
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/concert/include
+</code></pre><p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-35-03.png" alt=""></p>
+<ul>
+<li>Preprocessor :: Defined symbols (-D)</li>
+</ul>
+<pre><code>IL_STD
+</code></pre><p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-36-22.png" alt=""></p>
+<ul>
+<li>Dialect :: Other dialect flags</li>
+</ul>
+<pre><code>-stdlib=libc++
+</code></pre><p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-37-35.png" alt=""></p>
+<ul>
+<li>Use the following chart to validate the compile command is correct</li>
+</ul>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-39-16.png" alt=""></p>
+<h3 id="configuration-for-linker">Configuration for Linker</h3>
+<ul>
+<li>Libraries (-l)</li>
+</ul>
+<pre><code>concert
+cplex
+ilocplex
+</code></pre><ul>
+<li>Library search path (-L)</li>
+</ul>
+<pre><code>/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/cplex/lib/x86-64_osx/static_pic   
+/Users/y0w02p1/Applications/IBM/ILOG/CPLEX_Studio1271/concert/lib/x86-64_osx/static_pic
+</code></pre><p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-42-01.png" alt=""></p>
+<p>to validate:</p>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-43-26.png" alt=""></p>
+<h2 id="run-configuration">Run Configuration</h2>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-21-53-58.png" alt=""></p>
+<h2 id="reference">Reference</h2>
+<blockquote>
+<p>Ref: <a href="https://stackoverflow.com/questions/38312273/setting-up-cplex-in-eclipse-c-on-linux" target="_blank">https://stackoverflow.com/questions/38312273/setting-up-cplex-in-eclipse-c-on-linux</a></p>
+<p>Instead, you should try running one of the C++ examples shipped with CPLEX. Try the following (assuming your path is correct from above):</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /opt/ibm/ILOG/CPLEX_Studio_Community1263/cplex/examples/x86-64_linux/static_pic
+$ make ilolpex1 2&gt;&amp;1 | tee output.txt
+</code></pre>
+<p>This will save the output in output.txt so that you can look at it later. It should give you an idea of what the required command line arguments are.</p>
+<p>For example, on my system (x86-64_linux), I see this in the output:</p>
+<pre><code class="lang-bash">$ make ilolpex1
+g++ -O0 -c -m64 -O <span class="hljs-_">-f</span>PIC -fno-strict-aliasing -fexceptions -DNDEBUG -DIL_STD -I../../../include -I../../../../concert/include  ../../../examples/src/cpp/ilolpex1.cpp -o ilolpex1.o
+g++ -O0 -m64 -O <span class="hljs-_">-f</span>PIC -fno-strict-aliasing -fexceptions -DNDEBUG -DIL_STD -I../../../include -I../../../../concert/include  -L../../../lib/x86-64_linux/static_pic -L../../../../concert/lib/x86-64_linux/static_pic -o ilolpex1 ilolpex1.o -lconcert -lilocplex -lcplex -lm -lpthread
+</code></pre>
+<p>This tells you everything you need to know to compile and link your program. You&apos;ll just need to figure out where to enter this information in Eclipse.</p>
+</blockquote>
+<p>Note: on my machine</p>
+<p><img src="img/config_cplex_in_eclipse_cpp_2018-09-10-22-28-34.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="config_xcode_for_cplex.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Config XCode to use CPLEX">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Configurate Eclipse C++ IDE to use CPLEX","level":"2.1.1","depth":2,"next":{"title":"Config XCode to use CPLEX","level":"2.1.2","depth":2,"path":"cplex/config_xcode_for_cplex.md","ref":"cplex/config_xcode_for_cplex.md","articles":[]},"previous":{"title":"CPLEX","level":"2.1","depth":1,"ref":"","articles":[{"title":"Configurate Eclipse C++ IDE to use CPLEX","level":"2.1.1","depth":2,"path":"cplex/config_cplex_in_eclipse_cpp.md","ref":"cplex/config_cplex_in_eclipse_cpp.md","articles":[]},{"title":"Config XCode to use CPLEX","level":"2.1.2","depth":2,"path":"cplex/config_xcode_for_cplex.md","ref":"cplex/config_xcode_for_cplex.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","livereload"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"wy-gitbook"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cplex/config_cplex_in_eclipse_cpp.md","mtime":"2018-09-17T13:47:37.406Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T17:02:09.905Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

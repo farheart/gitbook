@@ -1,0 +1,882 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Docker架设Nginx服务器 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="nginx_in_docker.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                <a href="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                    
+                    Reading Notes -- 15 Types of Regression You Should Know
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    C++
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cpp/preprocessor_output.html">
+            
+                <a href="../cpp/preprocessor_output.html">
+            
+                    
+                    Pre-processor Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    SWIG
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../cpp/swig/swig_misc.html">
+            
+                <a href="../cpp/swig/swig_misc.html">
+            
+                    
+                    SWIG - MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../cpp/swig/call_cpp_by_swig.html">
+            
+                <a href="../cpp/swig/call_cpp_by_swig.html">
+            
+                    
+                    Call C++ function by SWIG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../cpp/swig/send_dict_to_cpp.html">
+            
+                <a href="../cpp/swig/send_dict_to_cpp.html">
+            
+                    
+                    Send dict to C++ function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cpp/gdb.html">
+            
+                <a href="../cpp/gdb.html">
+            
+                    
+                    Setup GDB on Macos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cpp/cpp_misc.html">
+            
+                <a href="../cpp/cpp_misc.html">
+            
+                    
+                    C++ MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cpp/book.html">
+            
+                <a href="../cpp/book.html">
+            
+                    
+                    Books
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    CPLEX
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                <a href="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                    
+                    Configurate Eclipse C++ IDE to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../cplex/config_xcode_for_cplex.html">
+            
+                <a href="../cplex/config_xcode_for_cplex.html">
+            
+                    
+                    Config XCode to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="mssql_in_docker.html">
+            
+                <a href="mssql_in_docker.html">
+            
+                    
+                    MSSQL in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="nginx_in_docker.html">
+            
+                <a href="nginx_in_docker.html">
+            
+                    
+                    Nginx in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.3" data-path="reading__Docker架设Nginx服务器.html">
+            
+                <a href="reading__Docker架设Nginx服务器.html">
+            
+                    
+                    Docker架设Nginx服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    GIT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../git/add_existing_codes_to_GIT.html">
+            
+                <a href="../git/add_existing_codes_to_GIT.html">
+            
+                    
+                    Add Existing Codes to GIT Repo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../git/use-BFG-delete-large-files-from-history.html">
+            
+                <a href="../git/use-BFG-delete-large-files-from-history.html">
+            
+                    
+                    Use BFG to delete large files from history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../git/git_proxy.html">
+            
+                <a href="../git/git_proxy.html">
+            
+                    
+                    Proxy Setting in GIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                <a href="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                    
+                    Jersey_jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../linux/backup_setting_installed.html">
+            
+                <a href="../linux/backup_setting_installed.html">
+            
+                    
+                    Backup settings and list of installed packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../linux/bash_configuration.html">
+            
+                <a href="../linux/bash_configuration.html">
+            
+                    
+                    .bash_profile & .bashrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../linux/things_to_do_after_install.html">
+            
+                <a href="../linux/things_to_do_after_install.html">
+            
+                    
+                    Things TODO after installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../linux/ubuntu_misc.html">
+            
+                <a href="../linux/ubuntu_misc.html">
+            
+                    
+                    Ubuntu Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../maven.html">
+            
+                <a href="../maven.html">
+            
+                    
+                    Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../proxy.html">
+            
+                <a href="../proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../python/multi-value_function.html">
+            
+                <a href="../python/multi-value_function.html">
+            
+                    
+                    About arg and *kwarg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../python/django.html">
+            
+                <a href="../python/django.html">
+            
+                    
+                    Django Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../python/logging.html">
+            
+                <a href="../python/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../python/pandas.html">
+            
+                <a href="../python/pandas.html">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../python/python-misc-tips.html">
+            
+                <a href="../python/python-misc-tips.html">
+            
+                    
+                    Misc Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../web.html">
+            
+                <a href="../web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../for_son.html">
+            
+                <a href="../for_son.html">
+            
+                    
+                    科普
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Docker架设Nginx服务器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="reading-notes----docker&#x67B6;&#x8BBE;nginx&#x670D;&#x52A1;&#x5668;">Reading Notes -- Docker&#x67B6;&#x8BBE;Nginx&#x670D;&#x52A1;&#x5668;</h1>
+<blockquote>
+<p>SRC: <a href="https://www.jianshu.com/p/2057576bfc5a" target="_blank">https://www.jianshu.com/p/2057576bfc5a</a></p>
+</blockquote>
+<p>&#x770B;&#x770B;&#x5DF2;&#x7ECF;&#x6709;&#x4EC0;&#x4E48;&#x955C;&#x50CF;</p>
+<pre><code>sudo docker search nginx
+</code></pre><p>&#x5BF9;&#x76EE;&#x524D;&#xFF08;2017&#x5E74;2&#x6708;&#xFF09;&#x7684;Nginx&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x5E38;&#x7528;&#x955C;&#x50CF;&#x53EF;&#x4F9B;&#x9009;&#x62E9;&#xFF1A;</p>
+<blockquote>
+<ul>
+<li><code>1.11.10</code>, <code>mainline</code>, <code>1</code>, <code>1.11</code>, <code>latest</code> (mainline/jessie/Dockerfile)</li>
+<li><code>1.11.10-alpine</code>, <code>mainline-alpine</code>, <code>1-alpine</code>, <code>1.11-alpine</code>, <code>alpine</code> (mainline/alpine/Dockerfile)</li>
+<li><code>1.10.3</code>, <code>stable</code>, <code>1.10</code> (stable/jessie/Dockerfile)</li>
+<li><code>1.10.3-alpine</code>, <code>stable-alpine</code>, <code>1.10-alpine</code> (stable/alpine/Dockerfile)</li>
+</ul>
+</blockquote>
+<p>&#x6211;&#x4E2A;&#x4EBA;&#x503E;&#x5411;&#x4E8E;&#x9009;&#x62E9;stable-alpine&#xFF0C;&#x5B83;&#x8FDC;&#x6BD4;&#x666E;&#x901A;&#x57FA;&#x4E8E;Debian&#x5236;&#x4F5C;&#x7684;&#x955C;&#x50CF;&#x8981;&#x5C0F;&#x5F97;&#x591A;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;docker-compose">&#x4F7F;&#x7528;docker-compose</h2>
+<pre><code class="lang-yaml"><span class="hljs-comment"># vim: set shiftwidth=2 tabstop=2 softtabstop=-1 expandtab:</span>
+
+<span class="hljs-attr">version:</span> <span class="hljs-string">&apos;2&apos;</span>
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  nginx:</span>
+<span class="hljs-attr">    image:</span> nginx:stable-alpine
+<span class="hljs-attr">    restart:</span> unless-stopped
+<span class="hljs-attr">    network_mode:</span> host
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> /srv/nginx/nginx.conf:/etc/nginx/nginx.conf
+<span class="hljs-bullet">      -</span> /srv/nginx/conf.d:/etc/nginx/conf.d
+<span class="hljs-bullet">      -</span> /srv/nginx/html:/usr/share/nginx/html
+<span class="hljs-bullet">      -</span> /var/log/nginx:/var/log/nginx
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">&quot;80:80&quot;</span>
+<span class="hljs-attr">    environment:</span>
+<span class="hljs-bullet">      -</span> NGINX_HOST=your.domain
+<span class="hljs-bullet">      -</span> NGINX_PORT=<span class="hljs-number">80</span>
+</code></pre>
+<p>&#x5C06;&#x4E0A;&#x8FF0;&#x5185;&#x5BB9;&#xFF0C;&#x5199;&#x5165;&#x4E00;&#x4E2A;docker-compose.yml&#x6587;&#x4EF6;&#x3002;&#x5728;&#x540C;&#x7EA7;&#x76EE;&#x5F55;&#xFF0C;&#x6267;&#x884C;sudo docker-compose up&#xFF0C;&#x5373;&#x53EF;&#x7B49;&#x4EF7;&#x4E8E;&#x4E00;&#x4E2A;&#x8D85;&#x590D;&#x6742;&#x7684;docker run ...&#x3002;</p>
+<p>docker-compose&#x6700;&#x64C5;&#x957F;&#x7684;&#x662F;&#x63CF;&#x8FF0;&#x4E00;&#x7EC4;&#x5BB9;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x4E0E;&#x5173;&#x7CFB;&#xFF0C;&#x540C;&#x65F6;&#x542F;&#x52A8;&#x6216;&#x5173;&#x95ED;&#x3002;&#x4F46;&#x5982;&#x679C;&#x5355;&#x4E2A;&#x5BB9;&#x5668;&#x7684;&#x914D;&#x7F6E;&#x4E5F;&#x5F88;&#x590D;&#x6742;&#xFF0C;&#x6211;&#x4E5F;&#x503E;&#x5411;&#x4E8E;&#x4F7F;&#x7528;&#x5B83;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#xFF0C;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x90FD;&#x653E;&#x5230;&#x4E3B;&#x673A;&#x7684;/srv/nginx&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BA9;&#x6302;&#x8F7D;&#x8FDB;&#x5BB9;&#x5668;&#x4F7F;&#x7528;&#xFF1B;&#x800C;/var&#x90A3;&#x8FB9;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x628A;log&#x4E5F;&#x6620;&#x5C04;&#x51FA;&#x6765;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x5728;&#x4E3B;&#x673A;&#x4E0A;&#x4E5F;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x5730;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x4E0E;&#x7F51;&#x9875;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x67E5;&#x770B;log&#x3002;</p>
+<p>&#x5982;&#x679C;&#x8003;&#x8651;&#x5230;&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x90E8;&#x7F72;&#x4E0E;&#x8FC1;&#x79FB;&#xFF0C;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x628A;Nginx&#x7684;&#x914D;&#x7F6E;&#x4E0E;docker-compose.yml&#x653E;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;Git&#x5E93;&#x3002;volumes&#x53C2;&#x6570;&#xFF0C;&#x4E5F;&#x53EF;&#x6539;&#x6210;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4E09;&#x6761;&#x547D;&#x4EE4;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x90E8;&#x7F72;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x3002;</p>
+<pre><code>git clone git@server:repo/name.git Website
+cd Website
+sudo docker-compose up
+</code></pre><p>&#x8FD9;&#x6837;&#x7684;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#xFF0C;&#x5982;&#x6B64;&#x7B80;&#x6D01;&#xFF0C;&#x4EE5;&#x81F4;&#x4F18;&#x96C5;&#x3002;</p>
+<h2 id="nginx&#x7684;stable&#x955C;&#x50CF;&#x7684;dockerfile&#x3002;">Nginx&#x7684;stable&#x955C;&#x50CF;&#x7684;Dockerfile&#x3002;</h2>
+<pre><code class="lang-docker"><span class="hljs-keyword">FROM</span> debian:jessie
+
+<span class="hljs-keyword">MAINTAINER</span> NGINX Docker Maintainers <span class="hljs-string">&quot;docker-maint@nginx.com&quot;</span>
+
+<span class="hljs-keyword">ENV</span> NGINX_VERSION <span class="hljs-number">1.10</span>.<span class="hljs-number">3</span>-<span class="hljs-number">1</span>~jessie
+
+<span class="hljs-keyword">RUN</span> <span class="bash">apt-key adv --keyserver hkp://pgp.mit.edu:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 \
+    &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb http://nginx.org/packages/debian/ jessie nginx&quot;</span> &gt;&gt; /etc/apt/sources.list \
+    &amp;&amp; apt-get update \
+    &amp;&amp; apt-get install --no-install-recommends --no-install-suggests -y \
+                        ca-certificates \
+                        nginx=<span class="hljs-variable">${NGINX_VERSION}</span> \
+                        nginx-module-xslt \
+                        nginx-module-geoip \
+                        nginx-module-image-filter \
+                        nginx-module-perl \
+                        nginx-module-njs \
+                        gettext-base \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+</span>
+<span class="hljs-comment"># forward request and error logs to docker log collector</span>
+<span class="hljs-keyword">RUN</span> <span class="bash">ln -sf /dev/stdout /var/<span class="hljs-built_in">log</span>/nginx/access.log \
+    &amp;&amp; ln -sf /dev/stderr /var/<span class="hljs-built_in">log</span>/nginx/error.log
+</span>
+<span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">80</span> <span class="hljs-number">443</span>
+
+<span class="hljs-keyword">CMD</span> <span class="bash">[<span class="hljs-string">&quot;nginx&quot;</span>, <span class="hljs-string">&quot;-g&quot;</span>, <span class="hljs-string">&quot;daemon off;&quot;</span>]
+</span></code></pre>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF1A;
+<a href="https://github.com/nginxinc/docker-nginx/tree/master/stable/jessie" target="_blank">https://github.com/nginxinc/docker-nginx/tree/master/stable/jessie</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="nginx_in_docker.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Nginx in Docker">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Docker架设Nginx服务器","level":"2.2.3","depth":2,"next":{"title":"GIT","level":"2.3","depth":1,"ref":"","articles":[{"title":"Add Existing Codes to GIT Repo","level":"2.3.1","depth":2,"path":"git/add_existing_codes_to_GIT.md","ref":"git/add_existing_codes_to_GIT.md","articles":[]},{"title":"Use BFG to delete large files from history","level":"2.3.2","depth":2,"path":"git/use-BFG-delete-large-files-from-history.md","ref":"git/use-BFG-delete-large-files-from-history.md","articles":[]},{"title":"Proxy Setting in GIT","level":"2.3.3","depth":2,"path":"git/git_proxy.md","ref":"git/git_proxy.md","articles":[]}]},"previous":{"title":"Nginx in Docker","level":"2.2.2","depth":2,"path":"docker/nginx_in_docker.md","ref":"docker/nginx_in_docker.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","livereload"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"wy-gitbook"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docker/reading__Docker架设Nginx服务器.md","mtime":"2018-08-29T16:42:21.520Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T17:02:09.905Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

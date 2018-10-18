@@ -1,0 +1,895 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Setup GDB on Macos · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cpp_misc.html" />
+    
+    
+    <link rel="prev" href="swig/send_dict_to_cpp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                <a href="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                    
+                    Reading Notes -- 15 Types of Regression You Should Know
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    C++
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="preprocessor_output.html">
+            
+                <a href="preprocessor_output.html">
+            
+                    
+                    Pre-processor Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    SWIG
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="swig/swig_misc.html">
+            
+                <a href="swig/swig_misc.html">
+            
+                    
+                    SWIG - MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="swig/call_cpp_by_swig.html">
+            
+                <a href="swig/call_cpp_by_swig.html">
+            
+                    
+                    Call C++ function by SWIG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="swig/send_dict_to_cpp.html">
+            
+                <a href="swig/send_dict_to_cpp.html">
+            
+                    
+                    Send dict to C++ function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="gdb.html">
+            
+                <a href="gdb.html">
+            
+                    
+                    Setup GDB on Macos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="cpp_misc.html">
+            
+                <a href="cpp_misc.html">
+            
+                    
+                    C++ MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="book.html">
+            
+                <a href="book.html">
+            
+                    
+                    Books
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    CPLEX
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                <a href="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                    
+                    Configurate Eclipse C++ IDE to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../cplex/config_xcode_for_cplex.html">
+            
+                <a href="../cplex/config_xcode_for_cplex.html">
+            
+                    
+                    Config XCode to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../docker/mssql_in_docker.html">
+            
+                <a href="../docker/mssql_in_docker.html">
+            
+                    
+                    MSSQL in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../docker/nginx_in_docker.html">
+            
+                <a href="../docker/nginx_in_docker.html">
+            
+                    
+                    Nginx in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../docker/reading__Docker架设Nginx服务器.html">
+            
+                <a href="../docker/reading__Docker架设Nginx服务器.html">
+            
+                    
+                    Docker架设Nginx服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    GIT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../git/add_existing_codes_to_GIT.html">
+            
+                <a href="../git/add_existing_codes_to_GIT.html">
+            
+                    
+                    Add Existing Codes to GIT Repo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../git/use-BFG-delete-large-files-from-history.html">
+            
+                <a href="../git/use-BFG-delete-large-files-from-history.html">
+            
+                    
+                    Use BFG to delete large files from history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../git/git_proxy.html">
+            
+                <a href="../git/git_proxy.html">
+            
+                    
+                    Proxy Setting in GIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                <a href="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                    
+                    Jersey_jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../linux/backup_setting_installed.html">
+            
+                <a href="../linux/backup_setting_installed.html">
+            
+                    
+                    Backup settings and list of installed packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../linux/bash_configuration.html">
+            
+                <a href="../linux/bash_configuration.html">
+            
+                    
+                    .bash_profile & .bashrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../linux/things_to_do_after_install.html">
+            
+                <a href="../linux/things_to_do_after_install.html">
+            
+                    
+                    Things TODO after installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../linux/ubuntu_misc.html">
+            
+                <a href="../linux/ubuntu_misc.html">
+            
+                    
+                    Ubuntu Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../maven.html">
+            
+                <a href="../maven.html">
+            
+                    
+                    Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../proxy.html">
+            
+                <a href="../proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../python/multi-value_function.html">
+            
+                <a href="../python/multi-value_function.html">
+            
+                    
+                    About arg and *kwarg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../python/django.html">
+            
+                <a href="../python/django.html">
+            
+                    
+                    Django Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../python/logging.html">
+            
+                <a href="../python/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../python/pandas.html">
+            
+                <a href="../python/pandas.html">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../python/python-misc-tips.html">
+            
+                <a href="../python/python-misc-tips.html">
+            
+                    
+                    Misc Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../web.html">
+            
+                <a href="../web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../for_son.html">
+            
+                <a href="../for_son.html">
+            
+                    
+                    科普
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Setup GDB on Macos</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="how-to-setup-gdb-and-eclipse-to-debug-c-files-on-macos-sierra">How to setup gdb and Eclipse to debug C++ files on macOS Sierra</h1>
+<blockquote>
+<p>Ref: <a href="https://www.thomasvitale.com/how-to-setup-gdb-and-eclipse-to-debug-c-files-on-macos-sierra/" target="_blank">https://www.thomasvitale.com/how-to-setup-gdb-and-eclipse-to-debug-c-files-on-macos-sierra/</a></p>
+</blockquote>
+<h2 id="install-gdb">Install gdb</h2>
+<pre><code>brew install gdb
+</code></pre><blockquote>
+<p>gdb requires special privileges to access Mach ports. 
+  You will need to codesign the binary. For instructions, see: 
+  <a href="https://sourceware.org/gdb/wiki/BuildingOnDarwin" target="_blank">https://sourceware.org/gdb/wiki/BuildingOnDarwin</a></p>
+<p>On 10.12 (Sierra) or later with SIP, you need to run this: </p>
+<pre><code>```
+echo &quot;set startup-with-shell off&quot; &gt;&gt; ~/.gdbinit
+```
+</code></pre></blockquote>
+<p><img src="img/cpp_misc_2018-09-26-16-49-40.png" alt=""></p>
+<pre><code>$ gdb --version
+</code></pre><pre><code>GNU gdb (GDB) 8.2
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later
+</code></pre><h2 id="generate-a-certificate">Generate a certificate</h2>
+<ol>
+<li>Launch <code>Keychain Access</code> application: <code>Applications &gt; Utilities &gt; Keychain Access</code>.</li>
+<li>From the Keychains list on the left, right-click on the <code>System</code> item and select Unlock Keychain &#x201C;System&#x201D;.</li>
+<li>Go to menu <code>Keychain Access &gt; Certificate Assistant &gt; Create a Certificate</code>.</li>
+<li>Choose a name (e.g. <code>gdb-cert</code>).</li>
+<li>Set Identity Type to <code>Self Signed Root</code>.</li>
+<li>Set Certificate Type to <code>Code Signing</code>.</li>
+<li><strong>Check the <code>Let me override defaults</code> checkbox</strong></li>
+<li>Click on <code>Create</code> button.</li>
+</ol>
+<p>Follow all steps, (<strong>Note: at last step, select <code>system</code> instead of default <code>login</code></strong>)you can see the new certificate under System keychains. From the contextual menu of the newly created certificate (right-click on it) select the <code>Get info</code> option. In the dialogue box expand the <code>Trust item</code> and set <code>Code signing</code> to <code>Always Trust</code>.</p>
+<p>Then, from the Keychains list on the left, right-click on the <code>System</code> item and select Lock Keychain &#x201C;System&#x201D;.</p>
+<p>Reboot</p>
+<h2 id="sign-the-certificate-for-gdb">Sign the certificate for gdb</h2>
+<pre><code class="lang-bash">$ codesign <span class="hljs-_">-s</span> gdb-cert /usr/<span class="hljs-built_in">local</span>/Cellar/gdb/8.2/bin/gdb
+</code></pre>
+<h2 id="potential-issues">Potential issues</h2>
+<h3 id="unable-to-find-mach-task-port-for-process-id-xxxx">Unable to find Mach task port for process-id xxxx</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// main.cpp</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span>
+<span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">int</span> c = a + b;
+    <span class="hljs-keyword">return</span> c;
+}
+</code></pre>
+<p>Compile</p>
+<pre><code class="lang-bash">gcc -g -o main main.cpp
+</code></pre>
+<p>Test <code>gdb</code></p>
+<pre><code class="lang-bash">gdb main
+</code></pre>
+<pre><code>GNU gdb (GDB) 8.2
+...
+Reading symbols from main...Reading symbols from /Users/y0w02p1/wy/codes/cpp/simplest/main.dSYM/Contents/Resources/DWARF/main...done.
+done.
+</code></pre><p>Try to run</p>
+<pre><code class="lang-gdb">(gdb) run
+</code></pre>
+<p>Encounter the following issue</p>
+<pre><code>Starting program: /Users/y0w02p1/wy/codes/cpp/simplest/main 
+Unable to find Mach task port for process-id 1026: (os/kern) failure (0x5).
+...
+</code></pre><h4 id="solution">Solution</h4>
+<blockquote>
+<p>Ref: <a href="https://stackoverflow.com/questions/11504377/gdb-fails-with-unable-to-find-mach-task-port-for-process-id-error" target="_blank">https://stackoverflow.com/questions/11504377/gdb-fails-with-unable-to-find-mach-task-port-for-process-id-error</a></p>
+</blockquote>
+<pre><code class="lang-bash">sudo gdb main
+</code></pre>
+<h4 id="to-run-gdb-without-sudo">To run gdb without sudo</h4>
+<p><strong>Not Work !!!</strong></p>
+<blockquote>
+<p>Ref: <a href="https://stackoverflow.com/questions/10221448/emacs-24-and-gdb-6-3-on-mac-os-x/10441587#10441587" target="_blank">https://stackoverflow.com/questions/10221448/emacs-24-and-gdb-6-3-on-mac-os-x/10441587#10441587</a></p>
+<p>```bash
+sudo chgrp procmod  /usr/local/Cellar/gdb/8.2/bin/gdb</p>
+</blockquote>
+<p>sudo chmod g+s /usr/local/Cellar/gdb/8.2/bin/gdb
+```</p>
+<h2 id="set-eclipse-for-using-gdb">Set Eclipse for using gdb</h2>
+<p>...</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="swig/send_dict_to_cpp.html" class="navigation navigation-prev " aria-label="Previous page: Send dict to C++ function">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cpp_misc.html" class="navigation navigation-next " aria-label="Next page: C++ MISC">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Setup GDB on Macos","level":"1.3.3","depth":2,"next":{"title":"C++ MISC","level":"1.3.4","depth":2,"path":"cpp/cpp_misc.md","ref":"cpp/cpp_misc.md","articles":[]},"previous":{"title":"Send dict to C++ function","level":"1.3.2.3","depth":3,"path":"cpp/swig/send_dict_to_cpp.md","ref":"cpp/swig/send_dict_to_cpp.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","livereload"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"wy-gitbook"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cpp/gdb.md","mtime":"2018-09-27T02:46:01.562Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T17:02:09.905Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

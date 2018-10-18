@@ -1,0 +1,845 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MSSQL in Docker · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="nginx_in_docker.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    AI
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                <a href="../ai/reading__15-TYPES-OF-REGRESSION-YOU-SHOULD-KNOW.html">
+            
+                    
+                    Reading Notes -- 15 Types of Regression You Should Know
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    C++
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../cpp/preprocessor_output.html">
+            
+                <a href="../cpp/preprocessor_output.html">
+            
+                    
+                    Pre-processor Output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    SWIG
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../cpp/swig/swig_misc.html">
+            
+                <a href="../cpp/swig/swig_misc.html">
+            
+                    
+                    SWIG - MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../cpp/swig/call_cpp_by_swig.html">
+            
+                <a href="../cpp/swig/call_cpp_by_swig.html">
+            
+                    
+                    Call C++ function by SWIG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../cpp/swig/send_dict_to_cpp.html">
+            
+                <a href="../cpp/swig/send_dict_to_cpp.html">
+            
+                    
+                    Send dict to C++ function
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../cpp/gdb.html">
+            
+                <a href="../cpp/gdb.html">
+            
+                    
+                    Setup GDB on Macos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../cpp/cpp_misc.html">
+            
+                <a href="../cpp/cpp_misc.html">
+            
+                    
+                    C++ MISC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../cpp/book.html">
+            
+                <a href="../cpp/book.html">
+            
+                    
+                    Books
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    CPLEX
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                <a href="../cplex/config_cplex_in_eclipse_cpp.html">
+            
+                    
+                    Configurate Eclipse C++ IDE to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../cplex/config_xcode_for_cplex.html">
+            
+                <a href="../cplex/config_xcode_for_cplex.html">
+            
+                    
+                    Config XCode to use CPLEX
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    Docker
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="2.2.1" data-path="mssql_in_docker.html">
+            
+                <a href="mssql_in_docker.html">
+            
+                    
+                    MSSQL in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="nginx_in_docker.html">
+            
+                <a href="nginx_in_docker.html">
+            
+                    
+                    Nginx in Docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="reading__Docker架设Nginx服务器.html">
+            
+                <a href="reading__Docker架设Nginx服务器.html">
+            
+                    
+                    Docker架设Nginx服务器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    GIT
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../git/add_existing_codes_to_GIT.html">
+            
+                <a href="../git/add_existing_codes_to_GIT.html">
+            
+                    
+                    Add Existing Codes to GIT Repo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../git/use-BFG-delete-large-files-from-history.html">
+            
+                <a href="../git/use-BFG-delete-large-files-from-history.html">
+            
+                    
+                    Use BFG to delete large files from history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../git/git_proxy.html">
+            
+                <a href="../git/git_proxy.html">
+            
+                    
+                    Proxy Setting in GIT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    Java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                <a href="../java/java轻量RESTful_api服务搭建-jersey_jetty.html">
+            
+                    
+                    Jersey_jetty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    Linux
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../linux/backup_setting_installed.html">
+            
+                <a href="../linux/backup_setting_installed.html">
+            
+                    
+                    Backup settings and list of installed packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../linux/bash_configuration.html">
+            
+                <a href="../linux/bash_configuration.html">
+            
+                    
+                    .bash_profile & .bashrc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../linux/things_to_do_after_install.html">
+            
+                <a href="../linux/things_to_do_after_install.html">
+            
+                    
+                    Things TODO after installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../linux/ubuntu_misc.html">
+            
+                <a href="../linux/ubuntu_misc.html">
+            
+                    
+                    Ubuntu Tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../maven.html">
+            
+                <a href="../maven.html">
+            
+                    
+                    Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../proxy.html">
+            
+                <a href="../proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" >
+            
+                <span>
+            
+                    
+                    Python
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../python/multi-value_function.html">
+            
+                <a href="../python/multi-value_function.html">
+            
+                    
+                    About arg and *kwarg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../python/django.html">
+            
+                <a href="../python/django.html">
+            
+                    
+                    Django Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../python/logging.html">
+            
+                <a href="../python/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../python/pandas.html">
+            
+                <a href="../python/pandas.html">
+            
+                    
+                    Pandas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../python/python-misc-tips.html">
+            
+                <a href="../python/python-misc-tips.html">
+            
+                    
+                    Misc Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../web.html">
+            
+                <a href="../web.html">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../for_son.html">
+            
+                <a href="../for_son.html">
+            
+                    
+                    科普
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MSSQL in Docker</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mssql-in-docker">MSSQL in Docker</h1>
+<h2 id="first-install-docker">First install Docker</h2>
+<p>Download docker.dmg and install on Mac</p>
+<blockquote>
+<p>REF: <a href="https://docs.docker.com/docker-for-mac/" target="_blank">https://docs.docker.com/docker-for-mac/</a></p>
+</blockquote>
+<h2 id="install-mssql-for-linux">Install <code>MSSQL for linux</code></h2>
+<p><a href="https://hub.docker.com/r/microsoft/mssql-server-linux/" target="_blank">https://hub.docker.com/r/microsoft/mssql-server-linux/</a></p>
+<h3 id="download-images">Download images</h3>
+<pre><code>docker login https://registry-1.docker.io/v2/
+</code></pre><ul>
+<li>Username: f########0  </li>
+<li>Password: \<t######a\></t######a\></li>
+</ul>
+<pre><code>docker pull microsoft/mssql-server-linux
+</code></pre><h2 id="run-mssql-container">Run MSSQL container</h2>
+<pre><code>docker run   -e &apos;ACCEPT_EULA=Y&apos;   -e &apos;MSSQL_SA_PASSWORD=1A2B3C4D5E6f&apos;  -p 1433:1433  -v mssql_volume:/var/opt/mssql   -d microsoft/mssql-server-linux:latest
+</code></pre><h3 id="note">Note:</h3>
+<ul>
+<li>This creates a MSSQL container with SA password = <strong>1A2B3C4D5E6f</strong></li>
+<li>This also creates a data volume container to host data, so even we stop and remove the mssql container, the data volume is still there</li>
+</ul>
+<h3 id="useful-cmd">Useful CMD</h3>
+<pre><code>docker image ls  # list images downloaded
+docker container ls - a   # list all containers
+docker container stop &lt;UID&gt; 
+docker container prune
+docker volume ls   # view data volume container
+</code></pre><blockquote>
+<p>REF: <a href="https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-linux-2017#persist" target="_blank">https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-docker?view=sql-server-linux-2017#persist</a></p>
+</blockquote>
+<h2 id="connect-by-sqlcmd">Connect by sqlcmd</h2>
+<pre><code>docker exec -it aac5   /opt/mssql-tools/bin/sqlcmd   -S localhost   -U sa   -P 1A2B3C4D5E6f
+</code></pre><h3 id="from-outside-of-container">From outside of container</h3>
+<pre><code>sqlcmd -S 127.0.0.1 -U sa -P 1A2B3C4D5E6f
+</code></pre><pre><code class="lang-sql">&gt; select @@version; 
+&gt; go
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="nginx_in_docker.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Nginx in Docker">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MSSQL in Docker","level":"2.2.1","depth":2,"next":{"title":"Nginx in Docker","level":"2.2.2","depth":2,"path":"docker/nginx_in_docker.md","ref":"docker/nginx_in_docker.md","articles":[]},"previous":{"title":"Docker","level":"2.2","depth":1,"ref":"","articles":[{"title":"MSSQL in Docker","level":"2.2.1","depth":2,"path":"docker/mssql_in_docker.md","ref":"docker/mssql_in_docker.md","articles":[]},{"title":"Nginx in Docker","level":"2.2.2","depth":2,"path":"docker/nginx_in_docker.md","ref":"docker/nginx_in_docker.md","articles":[]},{"title":"Docker架设Nginx服务器","level":"2.2.3","depth":2,"path":"docker/reading__Docker架设Nginx服务器.md","ref":"docker/reading__Docker架设Nginx服务器.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["disqus","livereload"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"wy-gitbook"},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docker/mssql_in_docker.md","mtime":"2018-06-25T22:33:06.680Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-18T17:02:09.905Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
